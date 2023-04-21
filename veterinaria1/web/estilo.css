@@ -1,0 +1,41 @@
+p{
+    display: inline-block;
+    padding: 1rem;
+   
+
+align: center;
+
+
+
+}
+h1, p {
+  text-align: center;
+}
+
+body {
+                background-image: url("https://www.shutterstock.com/image-vector/seamless-endless-pattern-traces-dog-260nw-1723462735.jpg");
+                background-position: center;
+                background-size: cover;body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  margin: auto;
+}
+
+            }
+            form {
+                margin: 0 auto;
+                width: 50%;
+                background-color: white;
+                padding: 20px;
+            }
+            
+
+
+table {
+  margin: auto;
+}

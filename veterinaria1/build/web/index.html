@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Agregar mascota</title>
+        <link rel="stylesheet" href="estilo.css"/>
+    </head>
+    <body>
+        <h1>VETERINARIA RESCATA UNA MASCOTA</h1>
+        <h1>Agregar mascota</h1>
+      
+       <form action="servletMascota" method="POST">
+            <label>Tipo de mascota:</label>
+            <select name="tipoMascota">
+                <option value="canino">Canino</option>
+                <option value="felino">Felino</option>
+            </select>
+            <br>
+            <label>Nombre:</label>
+            <input type="text" name="nombre">
+            <br>
+            <label>Raza:</label>
+            <input type="text" name="raza">
+            <br>
+            <label>Color:</label>
+            <input type="text" name="color">
+            <br>
+            <label>Edad:</label>
+            <input type="number" name="edad" min="0" max="50">
+            <br>
+            <div id="entrenamiento">
+                <label>Nivel de entrenamiento (solo para perros):</label>
+                <input type="number" name="entrenamiento" min="0" max="10">
+            </div>
+            <div id="toxoplasmosis" style="display:none;">
+                <label>¿Está libre de toxoplasmosis? (solo para gatos):</label>
+                <input type="checkbox" name="libreToxoplasmosis" value="true">
+            </div>
+            <br>
+            <input type="submit" value="Guardar">
+        </form>
+        
+        <script>
+            var tipoMascota = document.getElementsByName("tipoMascota")[0];
+            var entrenamiento = document.getElementById("entrenamiento");
+            var toxoplasmosis = document.getElementById("toxoplasmosis");
+            
+            tipoMascota.addEventListener("change", function() {
+                if (tipoMascota.value === "canino") {
+                    entrenamiento.style.display = "block";
+                    toxoplasmosis.style.display = "none";
+                } else if (tipoMascota.value === "felino") {
+                    entrenamiento.style.display = "none";
+                    toxoplasmosis.style.display = "block";
+                }
+            });
+        </script>        
+    </body>
+</html>
